@@ -9,6 +9,7 @@ for (int i = 2; i <= Math.sqrt(num); i++) {
     if (num % i == 0)
         return false;
 }
+```
 
 여기서 Math.sqrt(num)은 제곱근이다.
 예를 들어 4가 들어왔다면 루트 4, i = 2이므로 2로 나누어져 false가 됨.
@@ -35,6 +36,7 @@ i + (각 자릿수의 합) = N 이 되는 가장 작은 i (생성자) 를 찾는
 끝까지 찾지 못하면 0을 출력한다.
 
 코드 예시
+```
 import java.io.*;
 
 class Main {
@@ -63,15 +65,12 @@ class Main {
         System.out.println(result);
     }
 }
+```
 
 핵심 포인트
-
 분해합(Decomposition Sum) : i + sumDigits(i)
-
 생성자(Constructor) : 분해합이 N이 되는 i
-
 시간복잡도 : O(N × 자릿수)
-
 최적화 가능 :
 N의 자릿수를 d라 하면, 자릿수 합의 최대는 9×d 이므로
 시작 범위를 N - 9*d 부터 탐색해도 된다.
