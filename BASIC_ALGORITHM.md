@@ -12,13 +12,15 @@ for (int i = 2; i <= Math.sqrt(num); i++) {
 ```
 
 여기서 Math.sqrt(num)은 제곱근이다.
+
 예를 들어 4가 들어왔다면 루트 4, i = 2이므로 2로 나누어져 false가 됨.
 이번엔 9가 들어왔다면 루트 9, i = 2, 3인데 3으로 나누어지므로 false.
 
 즉, false이면 소수가 아니고 true일 때 소수로 판단하여 count를 +1 해주면 됨.
 1일 때는 소수가 아니므로 제외한다.
 
-분해합 (2231번)
+## 분해합 (2231번)
+
 입력값 N이 주어졌을 때, 어떤 수 i에 대해
 i + (각 자릿수의 합) = N 이 되는 가장 작은 i (생성자) 를 찾는 문제이다.
 문제 접근 방식
@@ -30,8 +32,6 @@ i + (각 자릿수의 합) = N 이 되는 가장 작은 i (생성자) 를 찾는
 
 코드 예시
 ```
-import java.io.*;
-
 class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

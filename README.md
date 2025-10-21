@@ -22,7 +22,7 @@
 |------|---------------|
 | 언어(Language) | Java 17 (OpenJDK) |
 | 입출력 방식 | BufferedReader / StringBuilder 기반 Fast I/O |
-| IDE | IntelliJ IDEA, VS Code |
+| IDE | VS Code |
 | 버전관리 | Git, GitHub |
 | 플랫폼 | [Baekjoon Online Judge](https://www.acmicpc.net) |
 
@@ -30,4 +30,4 @@
 
 - 하루 최소 1문제 풀이 ✍️
 - 100문제 달성 시 알고리즘 로드맵 2단계로 확장 (DFS/BFS → DP → Graph)
-- 코드는 단순히 “맞았습니다”가 아니라, **“이유를 설명할 수 있는 풀이”**를 지향
+- 코드는 단순히 “맞았습니다”가 아니라, 이유를 설명할 수 있는 풀이를 지향하려고 노력합니다.
