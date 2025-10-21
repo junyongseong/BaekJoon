@@ -1,2 +1,33 @@
-# BaekJoon
-This is an auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
+# 🧠 Baekjoon Solutions Repository
+
+> 백준(BOJ) 문제 풀이 저장소  
+> 꾸준히 알고리즘 실력을 다지고, 문제 접근 방식을 기록하는 공간입니다.
+
+---
+
+## 📚 개요 (Overview)
+이 리포지토리는 백준에서 푼 문제들의
+**소스 코드**,
+**풀이 과정**,
+**시간 복잡도 분석**,
+**노트/트러블슈팅 기록**
+을 체계적으로 관리하기 위해 만들어졌습니다.
+
+단순히 정답 코드를 저장하는 데 그치지 않고,
+“왜 이렇게 풀었는가?”를 명확히 정리하는 학습 중심 리포지토리입니다.
+
+## 🧩 사용 기술 (Tech Stack)
+
+| 구분 | 기술 / 도구 |
+|------|---------------|
+| 언어(Language) | Java 17 (OpenJDK) |
+| 입출력 방식 | BufferedReader / StringBuilder 기반 Fast I/O |
+| IDE | IntelliJ IDEA, VS Code |
+| 버전관리 | Git, GitHub |
+| 플랫폼 | [Baekjoon Online Judge](https://www.acmicpc.net) |
+
+## 🏁 목표 (Goal)
+
+- 하루 최소 1문제 풀이 ✍️
+- 100문제 달성 시 알고리즘 로드맵 2단계로 확장 (DFS/BFS → DP → Graph)
+- 코드는 단순히 “맞았습니다”가 아니라, **“이유를 설명할 수 있는 풀이”**를 지향
