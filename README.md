@@ -6,6 +6,7 @@
 ---
 
 ## 📚 개요 (Overview)
+
 이 리포지토리는 백준에서 푼 문제들의
 **소스 코드**,
 **풀이 과정**,
@@ -18,13 +19,13 @@
 
 ## 🧩 사용 기술 (Tech Stack)
 
-| 구분 | 기술 / 도구 |
-|------|---------------|
-| 언어(Language) | Java 17 (OpenJDK) |
-| 입출력 방식 | BufferedReader / StringBuilder 기반 Fast I/O |
-| IDE | VS Code |
-| 버전관리 | Git, GitHub |
-| 플랫폼 | [Baekjoon Online Judge](https://www.acmicpc.net) |
+| 구분           | 기술 / 도구                                      |
+| -------------- | ------------------------------------------------ |
+| 언어(Language) | Java 17 (OpenJDK)                                |
+| 입출력 방식    | BufferedReader / StringBuilder 기반 Fast I/O     |
+| IDE            | VS Code                                          |
+| 버전관리       | Git, GitHub                                      |
+| 플랫폼         | [Baekjoon Online Judge](https://www.acmicpc.net) |
 
 ## 🏁 목표 (Goal)
 
