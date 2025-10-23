@@ -26,4 +26,4 @@ Character.toUpperCase() 혹은 Character.toLowerCase()
 문자값을 대문자로 변환 혹은 소문자로 변환
 
 ##### Math.pow(n,p) :자바에서 사용하는 제곱근 n의 p제곱
-ex. Math.pow(4, 3)= 4^3 =64
+Ex) Math.pow(4, 3)= 4^3 =64
