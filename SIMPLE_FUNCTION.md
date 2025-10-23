@@ -12,6 +12,7 @@ toCharArray : 문자열 전체를 문자 배열(char[])로 변환할 때 사용�
         char one = S.charAt(1);
         System.out.println(one);
         // 'e'
+        // S.charAt(1)-'0' //숫자로 변환
 
         // toCharArray 예시 : 문자열을 문자 배열로 변환해 전체 순회할 때
         char[] arr = S.toCharArray();
@@ -19,3 +20,7 @@ toCharArray : 문자열 전체를 문자 배열(char[])로 변환할 때 사용�
             System.out.print(c + " ");
         }
         // 출력: H e l l O
+Character.isUpperCase() 혹은 isLowerCase()
+문자값이 대소문자인지 확인
+Character.toUpperCase() 혹은 Character.toLowerCase()
+문자값을 대문자로 변환 혹은 소문자로 변환
