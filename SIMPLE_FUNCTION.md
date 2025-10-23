@@ -1,10 +1,10 @@
 # 간단한 함수들
 
-st.countTokens() : 위의 공백을 기준으로 몇 개인지 셀 수 있음
+##### st.countTokens() : 위의 공백을 기준으로 몇 개인지 셀 수 있음
 
-charAt : String 타입의 문자열을 특정 문자(char 타입)로 변환할 때 사용함
+##### charAt : String 타입의 문자열을 특정 문자(char 타입)로 변환할 때 사용함
 
-toCharArray : 문자열 전체를 문자 배열(char[])로 변환할 때 사용함
+##### toCharArray : 문자열 전체를 문자 배열(char[])로 변환할 때 사용함
 
         String S = "HellO";
 
@@ -24,3 +24,6 @@ Character.isUpperCase() 혹은 isLowerCase()
 문자값이 대소문자인지 확인
 Character.toUpperCase() 혹은 Character.toLowerCase()
 문자값을 대문자로 변환 혹은 소문자로 변환
+
+##### Math.pow(n,p) :자바에서 사용하는 제곱근 n의 p제곱
+ex. Math.pow(4, 3)= 4^3 =64
