@@ -55,13 +55,14 @@ for (int i = 0; i < N; i++) arr[i] = br.readLine();
 
 #### ⚙️ 1️⃣ 재귀식 방식 (Recursive Version)
 
-```java
+```
 // 파스칼의 재귀식: C(n, k) = C(n-1, k-1) + C(n-1, k)
 static int combinationRecursive(int n, int k) {
     if (n == k || k == 0)
         return 1;
     return combinationRecursive(n - 1, k - 1) + combinationRecursive(n - 1, k);
 }
+```
 📥 입력 예시
 
 java
@@ -90,7 +91,7 @@ C(5,2)
 단점	입력 커질수록 속도 느림
 
 ⚙️ 2️⃣ DP 테이블 방식 (Dynamic Programming Version)
-java
+```
 // 바텀업 DP 방식
 static int combinationDP(int N, int K) {
     int[][] dp = new int[N + 1][K + 1];
@@ -105,6 +106,7 @@ static int combinationDP(int N, int K) {
     }
     return dp[N][K];
 }
+```
 📥 입력 예시
 System.out.println(combinationDP(5, 2)); // 10
 🧩 DP 테이블 (예: N=5, K=2)
