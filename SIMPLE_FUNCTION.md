@@ -27,3 +27,68 @@ Character.toUpperCase() 혹은 Character.toLowerCase()
 
 ##### Math.pow(n,p) :자바에서 사용하는 제곱근 n의 p제곱
 Ex) Math.pow(4, 3)= 4^3 =64
+
+## ✅ HashSet
+```java
+Set<String> set = new HashSet<>();
+set.add("apple");           // 추가
+set.contains("apple");      // 
+```
+존재 여부 true/false
+중복 없음
+순서 유지 안 함
+탐색 빠름 (O(1))
+
+✅ TreeSet
+```
+Set<String> set = new TreeSet<>();
+set.add("banana");
+set.add("apple");
+System.out.println(set); // [apple, banana]
+```
+자동 정렬 (사전순)
+중복 없음
+탐색 O(log n)
+
+✅ HashMap
+```
+Map<String, Integer> map = new HashMap<>();
+map.put("apple", 3);
+map.get("apple"); // 3
+```
+Key-Value 쌍 저장
+Key 중복 불가
+순서 없음
+
+✅ ArrayList
+```
+List<String> list = new ArrayList<>();
+list.add("A");
+list.get(0);
+list.size();
+```
+순서 있음
+중복 허용
+인덱스로 접근 가능
+
+✅ Collections.sort()
+```
+Collections.sort(list);
+```
+List를 오름차순 정렬
+내부적으로 Comparable 기준 사용
+
+⚡ 요약표
+자료구조	        정렬	중복	순서	특징
+HashSet	        ❌	❌	 ❌	가장 빠름
+TreeSet	        ✅      ❌	 ❌	자동 정렬
+HashMap	        ❌	 Key❌	 ❌	Key-Value 저장
+ArrayList	❌	 ✅	 ✅	순서 유지
+Collections.sort✅	  -	 -	리스트 정렬
+
+⚙️ 정리:
+빠르게 찾을 땐 HashSet,
+자동 정렬 원하면 TreeSet,
+순서 유지하려면 List,
+정렬은 Collections.sort(),
+키-값 저장은 HashMap.
