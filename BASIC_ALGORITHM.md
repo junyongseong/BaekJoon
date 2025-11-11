@@ -67,3 +67,48 @@ class Main {
 최적화 가능 :
 N의 자릿수를 d라 하면, 자릿수 합의 최대는 9×d 이므로
 시작 범위를 N - 9*d 부터 탐색해도 된다.
+
+# 🔢 문자열 정렬 (나이순 → 이름 사전순) 백준 10814번 문제
+---
+
+## 🧠 핵심 알고리즘
+> **Comparator**를 사용한 **다중 정렬**  
+> 1️⃣ 1차 기준: 나이(오름차순)  
+> 2️⃣ 2차 기준: 이름(사전순)  (만약 한다면)
+>  
+> 내부 정렬 알고리즘은 **TimSort (Stable Sort)** → 같은 나이는 입력 순서 유지.
+
+---
+
+## ⚙️ 코드 예시
+```java
+import java.util.*;
+
+class Member {
+    int age;
+    String name;
+    Member(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Member[] members = {
+            new Member(21, "Junkyu"),
+            new Member(21, "Dohyun"),
+            new Member(20, "Sunyoung")
+        };
+
+        Arrays.sort(members, (a, b) -> {
+            if (a.age == b.age) // 나이가 같으면 이름 사전순
+                return a.name.compareTo(b.name);
+            return a.age - b.age; // 기본 나이 오름차순
+        });
+
+        for (Member m : members)
+            System.out.println(m.age + " " + m.name);
+    }
+}
+```
