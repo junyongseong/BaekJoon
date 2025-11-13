@@ -8,7 +8,7 @@
 
         String S = "HellO";
 
-        // charAt 예시 : 특정 인덱스의 문자만 가져올 때
+        <!-- // charAt 예시 : 특정 인덱스의 문자만 가져올 때 -->
         char one = S.charAt(1);
         System.out.println(one);
         // 'e'

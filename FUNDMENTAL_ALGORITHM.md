@@ -1,4 +1,5 @@
 # 기초적인 실전 문재를 적용할 알고리즘을 공부하는 공간입니다.
+
 ## 배열, 문자열, 정렬 알고리즘같은것이 그 예시힙니다.
 
 ### 문자열 정렬(1181번)
@@ -10,6 +11,7 @@
 compareTo()와 length()를 함께 사용한 커스텀 정렬
 
 중복 제거 시 equals()와 인덱스 주의
+
 ```
 for (int i = 0; i < N; i++) arr[i] = br.readLine();
 
@@ -27,7 +29,8 @@ for (int i = 0; i < N; i++) arr[i] = br.readLine();
 ```
 
 ### 핵심 알고리즘: 폴리노미얼 롤링 해시(Polynomial Rolling Hash)
-학습 포인트: Math.pow() 대신 r *= 31로 지수 처리
+
+학습 포인트: Math.pow() 대신 r*= 31로 지수 처리
 
 오버플로우 방지를 위한 mod 연산 (1234567891은 큰 소수)
 (result + val * r) % MOD 구조 이해
@@ -42,10 +45,13 @@ for (int i = 0; i < N; i++) arr[i] = br.readLine();
             r = (r * 31) % MOD;
         }
         System.out.println(result);
-        
+
 ### 🧮 이항계수 (Binomial Coefficient, 백준 11050)
+
 ---
+
 #### 🧠 핵심 알고리즘
+
 > 이항계수는 “조합(Combination)”을 계산하는 기본 알고리즘.  
 > 두 가지 방법으로 구현 가능:
 > 1️⃣ **재귀식 (Pascal’s Triangle 공식)**  
@@ -63,20 +69,20 @@ static int combinationRecursive(int n, int k) {
     return combinationRecursive(n - 1, k - 1) + combinationRecursive(n - 1, k);
 }
 ```
-📥 입력 예시
 
+📥 입력 예시
 
 System.out.println(combinationRecursive(5, 2)); // 10
 
-
 🧠 특징
-기저 조건	n==k 또는 k==0 → 1
-점화식	C(n,k) = C(n-1,k-1) + C(n-1,k)
-시간복잡도	O(2ⁿ) (중복 호출 多)
-장점	구조가 수학 공식 그대로라 직관적
-단점	입력 커질수록 속도 느림
+기저 조건 n==k 또는 k==0 → 1
+점화식 C(n,k) = C(n-1,k-1) + C(n-1,k)
+시간복잡도 O(2ⁿ) (중복 호출 多)
+장점 구조가 수학 공식 그대로라 직관적
+단점 입력 커질수록 속도 느림
 
 ⚙️ 2️⃣ DP 테이블 방식 (Dynamic Programming Version)
+
 ```
 // 바텀업 DP 방식
 static int combinationDP(int N, int K) {
@@ -93,20 +99,18 @@ static int combinationDP(int N, int K) {
     return dp[N][K];
 }
 ```
+
 📥 입력 예시
 System.out.println(combinationDP(5, 2)); // 10
 
 🧠 특징
 
-포인트	설명
-점화식	dp[n][k] = dp[n-1][k-1] + dp[n-1][k]
-기저 조건	dp[n][0] = dp[n][n] = 1
-시간복잡도	O(N×K)
-장점	빠르고 안정적
-단점	메모리 사용 O(N×K)
-       
-
-
+포인트 설명
+점화식 dp[n][k] = dp[n-1][k-1] + dp[n-1][k]
+기저 조건 dp[n][0] = dp[n][n] = 1
+시간복잡도 O(N×K)
+장점 빠르고 안정적
+단점 메모리 사용 O(N×K)
 
 #### DP 피보나치 (1003번)
 
@@ -115,6 +119,7 @@ System.out.println(combinationDP(5, 2)); // 10
 int는 기본값 0이라 “계산 안 됨” 상태를 구분 불가
 Integer는 null 가능 → if (dp[n] == null)로 체크
 DP를 이용해 중복 호출을 막고 재귀 정의 그대로 구현
+
 ```
 static Integer[][] dp = new Integer[40][2];
 
@@ -141,14 +146,14 @@ static Integer[] fibo(int n) {
 반복문보다 정의를 그대로 코드로 옮기기 쉬움
 DP와 결합 시 “중복 호출 제거 + 구조적 직관성” 둘 다 확보 가능
 
-
-#### DP 피보나치 (1003번)
+### DP 피보나치 (1003번)
 
 핵심 알고리즘: 재귀 + 메모이제이션(Memoization)
 핵심 포인트: Integer로 null 체크하여 미계산 상태 구분
 int는 기본값 0이라 “계산 안 됨” 상태를 구분 불가
 Integer는 null 가능 → if (dp[n] == null)로 체크
 DP를 이용해 중복 호출을 막고 재귀 정의 그대로 구현
+
 ```
 static Integer[][] dp = new Integer[40][2];
 
@@ -160,6 +165,22 @@ static Integer[] fibo(int n) {
     return dp[n];
 }
 ```
+
+## 바텀업 vs 탑다운 비교
+
+| 구분           | 바텀업 (Bottom-Up)                          | 탑다운 (Top-Down)                             |
+| -------------- | ------------------------------------------- | --------------------------------------------- |
+| 실행 방향      | 작은 수 → 큰 수 (1 → N)                     | 큰 수 → 작은 수 (N → 1)                       |
+| 구현 방식      | 반복문 (for)                                | 재귀함수 (recur)                              |
+| 탈출 방식      | i <= N 끝나면 자동 종료                     | if (n == 1 or n == 2) return 1;               |
+| DP 저장 방식   | 각 단계에서 dp[i] 직접 갱신                 | 함수 return 시 dp[n]에 저장                   |
+| 중복 계산 방지 | 순차 계산이라 자동 방지                     | if (dp[n] != 0) 로 이미 계산된 값 재사용      |
+| 대표 코드 구조 | for (i=3; i<=N; i++) dp[i]=dp[i-1]+dp[i-2]; | recur(n) { dp[n]=recur(n-1)+recur(n-2); }     |
+| 메모리 사용    | 스택 사용 X → 안정적                        | 재귀 스택 사용 → 깊으면 Overflow 위험         |
+| 가독성         | 규칙적, 실무 친화적                         | 논리 흐름 직관적, 수학적 사고에 유리          |
+| 장점           | 빠르고 안정적                               | 구현 간단, 이해 쉬움                          |
+| 단점           | 식이 길어질 수 있음                         | 스택 제한으로 깊은 재귀 불리                  |
+| 대표 문제 예시 | 2748번 (피보나치 수 2), 1463번 (1로 만들기) | 10870번 (피보나치 수 5), 2579번 (계단 오르기) |
 
 💡 int를 쓸 경우엔 -1로 초기화해 “미계산” 표시 대체 가능
 단, 음수 값이 결과로 나올 수 있다면 혼동 주의.
@@ -174,3 +195,93 @@ static Integer[] fibo(int n) {
 피보나치는 본질적으로 f(n) = f(n-1) + f(n-2) 형태의 재귀적 수학 정의식
 반복문보다 정의를 그대로 코드로 옮기기 쉬움
 DP와 결합 시 “중복 호출 제거 + 구조적 직관성” 둘 다 확보 가능
+
+#### 바텀업 코드 (Bottom-Up)
+
+```
+int[] dp = new int[N + 1];
+
+        dp[1] = 1;
+        if (N > 1) dp[2] = 1;
+
+        for (int i = 3; i <= N; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+
+        System.out.println(dp[N]);
+```
+
+#### 탑다운 코드 (Top-Down)
+
+```
+static int[] dp;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        dp = new int[N + 1];
+        System.out.println(fibo(N));
+    }
+
+    static int fibo(int n) {
+        if (n <= 2) return 1;       // 탈출 조건
+        if (dp[n] != 0) return dp[n]; // 이미 계산된 값 재사용
+
+        dp[n] = fibo(n - 1) + fibo(n - 2);
+        return dp[n];
+    }
+```
+
+## 🧠 DP (Dynamic Programming)
+
+### 바텀업(Bottom-Up) vs 탑다운(Top-Down)
+
+| 구분           | 바텀업 (Bottom-Up)                         | 탑다운 (Top-Down)                              |
+| -------------- | ------------------------------------------ | ---------------------------------------------- |
+| 실행 방향      | 작은 수 → 큰 수 (1 → N)                    | 큰 수 → 작은 수 (N → 1)                        |
+| 구현 방식      | 반복문 (for)                               | 재귀함수 (recur)                               |
+| 탈출 방식      | i <= N 끝나면 자동 종료                    | if (n == 1) return;                            |
+| DP 저장 방식   | 각 단계에서 dp[i] 직접 갱신                | 함수 return 시 dp[n]에 저장                    |
+| 중복 계산 방지 | 순차 계산이라 자동 방지                    | if (dp[n] != 0) 로 이미 계산된 값 재사용       |
+| 대표 코드 구조 | for (i=2; i<=N; i++) dp[i] = min(...);     | recur(n) { dp[n] = min(recur(...)+1); }        |
+| 메모리 사용    | 스택 사용 X → 안전                         | 재귀 스택 사용 → 깊으면 Overflow 위험          |
+| 가독성         | 규칙적, 실무 친화적                        | 논리 흐름 직관적, 수학적 사고에 유리           |
+| 장점           | 빠르고 안정적                              | 구현 간단, 이해 쉬움                           |
+| 단점           | 식이 길어질 수 있음                        | 스택 제한으로 깊은 재귀 불리                   |
+| 대표 문제 예시 | 1463번 (1로 만들기), 9095번 (1,2,3 더하기) | 피보나치, 1463번(재귀형), 2579번 (계단 오르기) |
+
+💻 바텀업 예시 코드
+
+```
+for (int i = 2; i <= N; i++) {
+    dp[i] = dp[i - 1] + 1;
+    if (i % 2 == 0)
+        dp[i] = Math.min(dp[i], dp[i / 2] + 1);
+    if (i % 3 == 0)
+        dp[i] = Math.min(dp[i], dp[i / 3] + 1);
+}
+System.out.println(dp[N]);
+```
+
+💻 탑다운 예시 코드
+
+```
+static int recur(int n) {
+    if (n == 1) return 0; // 탈출 조건
+    if (dp[n] != 0) return dp[n]; // 이미 계산된 값
+
+    dp[n] = recur(n - 1) + 1;
+
+    if (n % 2 == 0)
+        dp[n] = Math.min(dp[n], recur(n / 2) + 1);
+    if (n % 3 == 0)
+        dp[n] = Math.min(dp[n], recur(n / 3) + 1);
+
+    return dp[n];
+}
+```
+
+요약
+
+바텀업 : 아래에서 위로 쌓아올리는 방식
+탑다운 : 위에서 쪼개며 내려가고, 계산한 건 기억
